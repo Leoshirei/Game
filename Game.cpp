@@ -5,5 +5,6 @@ void Game::run()
 	while (window.isOpen())
 	{
 		update.update(window);
+		render.render(window);
 	}
 }
