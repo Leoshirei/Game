@@ -1,11 +1,12 @@
 #include <SFML/Graphics.hpp>
+#include "Window.h"
+
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Game");
+	Window window;
 	while (window.isOpen())
 	{
-		window.clear();
-		window.display();
+		
 	}
 }
