@@ -16,3 +16,17 @@ sf::RenderWindow& Window::get()
 {
 	return window;
 }
+
+//Drawing methods
+void Window::clear()
+{
+	window.clear();
+}
+void Window::draw(const sf::Drawable& object)
+{
+	window.draw(object);
+}
+void Window::display()
+{
+	window.display();
+}

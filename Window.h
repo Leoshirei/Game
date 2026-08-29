@@ -13,6 +13,9 @@ public:
 	Window();
 	bool isOpen() const;
 	void close();
+	void clear();
+	void draw(const sf::Drawable& object);
+	void display();
 	sf::RenderWindow& get();
 };
 
