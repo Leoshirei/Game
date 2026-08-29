@@ -9,6 +9,7 @@ private:
 	Window window;
 	Update update;
 	Render render;
+	Player player;
 public:
 	void run();
 };

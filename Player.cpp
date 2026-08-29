@@ -15,3 +15,14 @@ void Player::move(sf::Vector2f direction, float deltaTime)
 	position += direction * speed * deltaTime;
 	player.setPosition(position);
 }
+void Player::sprint(bool active)
+{
+	if(active)
+	{
+		speed = sprint_speed;
+	}
+	else
+	{
+		speed = 200.f;
+	}
+}
