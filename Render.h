@@ -1,9 +1,10 @@
 #pragma once
 #include "Window.h"
-#include "Player.h"
+#include "World.h"
+
 class Render
 {
 public:
-	void render(Player& player, Window& window);
+	void render(World& world, Window& window);
 };
 

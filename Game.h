@@ -1,4 +1,5 @@
 #pragma once
+#include "World.h"
 #include "Window.h"
 #include "Update.h"
 #include "Render.h"
@@ -9,7 +10,7 @@ private:
 	Window window;
 	Update update;
 	Render render;
-	Player player;
+	World world;
 public:
 	void run();
 };

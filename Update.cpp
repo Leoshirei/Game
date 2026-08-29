@@ -1,6 +1,6 @@
 #include "Update.h"
 
-void Update::update(Player& player, Window& window)
+void Update::update(World& world, Window& window)
 {
 	float deltaTime = clock.restart().asSeconds();
 
@@ -39,6 +39,6 @@ void Update::update(Player& player, Window& window)
 		direction = direction.normalized();
 	}
 
-	player.sprint(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift));
-	player.move(direction, deltaTime);
+	world.getPlayer().sprint(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift));
+	world.getPlayer().move(direction, deltaTime);
 }

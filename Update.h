@@ -1,12 +1,12 @@
 #pragma once
 #include "Window.h"
-#include "Player.h"
+#include "World.h"
 
 class Update
 {
 private:
 	sf::Clock clock;
 public:
-	void update(Player& player, Window& window);
+	void update(World& world, Window& window);
 };
 
