@@ -41,4 +41,6 @@ void Update::update(World& world, Window& window)
 
 	world.getPlayer().sprint(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift));
 	world.getPlayer().move(direction, deltaTime);
+
+	world.spawnEnemy();
 }

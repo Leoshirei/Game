@@ -6,5 +6,6 @@ class Render
 {
 public:
 	void render(World& world, Window& window);
+
 };
 
