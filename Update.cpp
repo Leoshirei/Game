@@ -2,6 +2,7 @@
 
 void Update::update(World& world, Window& window)
 {
+		
 	float deltaTime = clock.restart().asSeconds();
 
 	while (std::optional event = window.get().pollEvent())
