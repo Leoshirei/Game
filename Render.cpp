@@ -10,6 +10,10 @@ void Render::render(World& world, Window& window)
 	{
 		window.draw(enemy);
 	}
+	for (Bullet& bullet : world.getBullets())
+	{
+		window.draw(bullet);
+	}
 
 	window.display();
 }

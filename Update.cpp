@@ -39,6 +39,16 @@ void Update::update(World& world, Window& window)
 	{
 		direction = direction.normalized();
 	}
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && world.getShootClock().getElapsedTime() >= sf::milliseconds(400))
+	{
+		world.getPlayer().shoot(world.getBullets(), window, deltaTime);
+		world.getShootClock().restart();
+	}
+
+	for (auto& bullet : world.getBullets())
+	{
+		bullet.move(deltaTime);
+	}
 
 	world.getPlayer().sprint(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift));
 	world.getPlayer().move(direction, deltaTime);

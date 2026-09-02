@@ -26,3 +26,16 @@ void Player::sprint(bool active)
 		speed = 200.f;
 	}
 }
+void Player::shoot(std::vector<Bullet>& bullets, Window& window, float deltaTime)
+{
+	Bullet bullet;
+
+	sf::Vector2i end_position = sf::Mouse::getPosition(window.get());
+	sf::Vector2f start_position = player.getPosition();
+	sf::Vector2f direction = { end_position.x - start_position.x, end_position.y - start_position.y };
+	direction = direction.normalized();
+	bullet.setPosition(start_position);
+	bullet.setDirection(direction);
+	bullets.push_back(bullet);
+	std::cout << bullets.size() << std::endl;
+}

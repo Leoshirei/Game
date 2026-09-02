@@ -9,6 +9,14 @@ std::vector<Enemy>& World::getEnemies()
 {
 	return enemies;
 }
+std::vector<Bullet>& World::getBullets()
+{
+	return bullets;
+}
+sf::Clock& World::getShootClock()
+{
+	return shoot_clock;
+}
 void World::spawnEnemy()
 {
 	if (enemies.size() < 10 && spawn_clock.getElapsedTime() > sf::milliseconds(800))

@@ -1,5 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Bullet.h"
+#include "Window.h"
 
 class Player : public sf::Drawable
 {
@@ -16,6 +19,7 @@ private:
 public:
 	Player();
 	void move(sf::Vector2f direction, float deltaTime);
+	void shoot(std::vector<Bullet>& bullets, Window& window, float deltaTime);
 	void sprint(bool active);
 };
 
