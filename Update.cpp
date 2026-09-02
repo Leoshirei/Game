@@ -45,9 +45,17 @@ void Update::update(World& world, Window& window)
 		world.getShootClock().restart();
 	}
 
-	for (auto& bullet : world.getBullets())
+	for (auto it = world.getBullets().begin(); it != world.getBullets().end();)
 	{
-		bullet.move(deltaTime);
+		if (it->isExpired())
+		{
+			it = world.getBullets().erase(it);
+		}
+		else
+		{
+			it->move(deltaTime);
+			++it;
+		}
 	}
 
 	world.getPlayer().sprint(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift));

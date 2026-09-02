@@ -8,7 +8,7 @@ Bullet::Bullet()
 }
 bool Bullet::isExpired()
 {
-	return life_time.getElapsedTime() >= sf::seconds(5.f);
+	return life_time.getElapsedTime() >= sf::seconds(2.f);
 }
 void Bullet::setPosition(sf::Vector2f position)
 {
