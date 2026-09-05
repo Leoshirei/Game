@@ -21,13 +21,29 @@ void World::spawnEnemy()
 {
 	if (enemies.size() < 10 && spawn_clock.getElapsedTime() > sf::milliseconds(800))
 	{
+		float pos_X, pos_Y;
+		sf::Vector2f rand_position;
+		Enemy enemy;
+		bool collision;
+		do
+		{
+			collision = false;
+			pos_X = rand() % 1280;
+			pos_Y = rand() % 720;
+			rand_position = { pos_X, pos_Y };
+			enemy.setPosition(rand_position);
+			collision = player.getBound().findIntersection(enemy.getBound()).has_value();
+			for (auto& e : enemies)
+			{
+				if (e.getBound().findIntersection(enemy.getBound()).has_value())
+				{
+					collision = true;
+					break;
+				}
+			}
+		} while (collision);
 		enemies.emplace_back();
-		float pos_X = rand() % 1280;
-		float pos_Y = rand() % 720;
-		sf::Vector2f rand_position = { pos_X, pos_Y };
 		enemies.back().setPosition(rand_position);
-
 		spawn_clock.restart();
-		std::cout << enemies.size() << " " << pos_X << " " << pos_Y << std::endl;
 	}
 }

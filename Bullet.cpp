@@ -22,6 +22,10 @@ void Bullet::move(float deltaTime)
 {
 	bullet.move(bullet_direction * deltaTime * speed);
 }
+sf::FloatRect Bullet::getBound()
+{
+	return bullet.getGlobalBounds();
+}
 void Bullet::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(bullet, states);

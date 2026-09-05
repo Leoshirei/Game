@@ -21,5 +21,6 @@ public:
 	void move(sf::Vector2f direction, float deltaTime);
 	void shoot(std::vector<Bullet>& bullets, Window& window, float deltaTime);
 	void sprint(bool active);
+	sf::FloatRect getBound();
 };
 

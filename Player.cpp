@@ -39,3 +39,7 @@ void Player::shoot(std::vector<Bullet>& bullets, Window& window, float deltaTime
 	bullets.push_back(bullet);
 	std::cout << bullets.size() << std::endl;
 }
+sf::FloatRect Player::getBound()
+{
+	return player.getGlobalBounds();
+}

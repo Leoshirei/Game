@@ -16,6 +16,7 @@ public:
 	void move(float deltaTime);
 	void setPosition(sf::Vector2f position);
 	void setDirection(sf::Vector2f direction);
+	sf::FloatRect getBound();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 

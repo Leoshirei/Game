@@ -57,6 +57,7 @@ void Update::update(World& world, Window& window)
 			++it;
 		}
 	}
+	collission.checkCollision(world);
 
 	world.getPlayer().sprint(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift));
 	world.getPlayer().move(direction, deltaTime);

@@ -11,6 +11,7 @@ private:
 public:
 	Enemy();
 	void setPosition(sf::Vector2f position);
+	sf::FloatRect getBound();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 
