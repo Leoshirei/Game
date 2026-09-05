@@ -1,6 +1,9 @@
 #include "World.h"
 #include <iostream>
-
+TextureManager& World::getTextures()
+{
+	return textureManager;
+}
 Player& World::getPlayer()
 {
 	return player;

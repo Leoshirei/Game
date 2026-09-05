@@ -41,7 +41,7 @@ void Update::update(World& world, Window& window)
 	}
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && world.getShootClock().getElapsedTime() >= sf::milliseconds(400))
 	{
-		world.getPlayer().shoot(world.getBullets(), window, deltaTime);
+		world.getPlayer().shoot(world.getBullets(), window, deltaTime, world.getTextures().getTexture("arrow"));
 		world.getShootClock().restart();
 	}
 

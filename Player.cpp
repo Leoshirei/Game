@@ -26,9 +26,9 @@ void Player::sprint(bool active)
 		speed = 200.f;
 	}
 }
-void Player::shoot(std::vector<Bullet>& bullets, Window& window, float deltaTime)
+void Player::shoot(std::vector<Bullet>& bullets, Window& window, float deltaTime, const sf::Texture& texture)
 {
-	Bullet bullet;
+	Bullet bullet(texture);
 
 	sf::Vector2i end_position = sf::Mouse::getPosition(window.get());
 	sf::Vector2f start_position = player.getPosition();

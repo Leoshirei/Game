@@ -11,7 +11,7 @@ private:
 	sf::Vector2f bullet_direction;
 	sf::Clock life_time;
 public:
-	Bullet();
+	Bullet(const sf::Texture& texture);
 	bool isExpired();
 	void move(float deltaTime);
 	void setPosition(sf::Vector2f position);

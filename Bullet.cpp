@@ -1,10 +1,11 @@
 #include "Bullet.h"
 
-Bullet::Bullet()
+Bullet::Bullet(const sf::Texture& texture)
 {
 	bullet.setRadius(radius);
 	bullet.setFillColor(color);
 	bullet.setOrigin(origin);
+	bullet.setTexture(&texture);
 }
 bool Bullet::isExpired()
 {
